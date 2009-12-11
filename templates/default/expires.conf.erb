@@ -1,0 +1,4 @@
+if ($request_uri ~* "<%= @node[:nginx][:expires][:regex] %>") {
+    expires <%= @node[:nginx][:expires][:time] %>;
+    break;
+}

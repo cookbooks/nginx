@@ -1,0 +1,207 @@
+{
+  "replacing": {
+
+  },
+  "long_description": "",
+  "attributes": {
+    "nginx\/worker_connections": {
+      "required": false,
+      "default": "1024",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "description": "Number of connections per worker",
+      "multiple_values": false,
+      "display_name": "Nginx Worker Connections"
+    },
+    "nginx\/gzip_types": {
+      "required": false,
+      "default": [
+        "text\/plain",
+        "text\/html",
+        "text\/css",
+        "application\/x-javascript",
+        "text\/xml",
+        "application\/xml",
+        "application\/xml+rss",
+        "text\/javascript"
+      ],
+      "type": "array",
+      "recipes": [
+
+      ],
+      "description": "Supported MIME-types for gzip",
+      "multiple_values": false,
+      "display_name": "Nginx Gzip Types"
+    },
+    "nginx\/binary": {
+      "required": false,
+      "default": "\/usr\/sbin\/nginx",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "description": "Location of the nginx server binary",
+      "multiple_values": false,
+      "display_name": "Nginx Binary"
+    },
+    "nginx\/user": {
+      "required": false,
+      "default": "www-data",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "description": "User nginx will run as",
+      "multiple_values": false,
+      "display_name": "Nginx User"
+    },
+    "nginx\/keepalive_timeout": {
+      "required": false,
+      "default": "65",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "multiple_values": false,
+      "display_name": "Nginx Keepalive Timeout"
+    },
+    "nginx\/gzip_proxied": {
+      "required": false,
+      "default": "any",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "description": "Whether gzip is proxied",
+      "multiple_values": false,
+      "display_name": "Nginx Gzip Proxied"
+    },
+    "nginx\/gzip_comp_level": {
+      "required": false,
+      "default": "2",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "description": "Amount of compression to use",
+      "multiple_values": false,
+      "display_name": "Nginx Gzip Compression Level"
+    },
+    "nginx\/dir": {
+      "required": false,
+      "default": "\/etc\/nginx",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "description": "Location of nginx configuration files",
+      "multiple_values": false,
+      "display_name": "Nginx Directory"
+    },
+    "nginx\/server_names_hash_bucket_size": {
+      "required": false,
+      "default": "64",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "multiple_values": false,
+      "display_name": "Nginx Server Names Hash Bucket Size"
+    },
+    "nginx\/worker_processes": {
+      "required": false,
+      "default": "1",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "description": "Number of worker processes",
+      "multiple_values": false,
+      "display_name": "Nginx Worker Processes"
+    },
+    "nginx\/gzip_http_version": {
+      "required": false,
+      "default": "1.0",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "description": "Version of HTTP Gzip",
+      "multiple_values": false,
+      "display_name": "Nginx Gzip HTTP Version"
+    },
+    "nginx\/log_dir": {
+      "required": false,
+      "default": "\/var\/log\/nginx",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "description": "Location for nginx logs",
+      "multiple_values": false,
+      "display_name": "Nginx Log Directory"
+    },
+    "nginx\/gzip": {
+      "required": false,
+      "default": "on",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "description": "Whether gzip is enabled",
+      "multiple_values": false,
+      "display_name": "Nginx Gzip"
+    },
+    "nginx\/keepalive": {
+      "required": false,
+      "default": "on",
+      "type": "string",
+      "recipes": [
+
+      ],
+      "description": "Whether to enable keepalive",
+      "multiple_values": false,
+      "display_name": "Nginx Keepalive"
+    }
+  },
+  "maintainer": "Opscode, Inc.",
+  "recommendations": {
+
+  },
+  "license": "Apache 2.0",
+  "recipes": {
+    "nginx::memcache_proxy": "",
+    "nginx": ""
+  },
+  "maintainer_email": "cookbooks@opscode.com",
+  "suggestions": {
+
+  },
+  "dependencies": {
+
+  },
+  "conflicting": {
+
+  },
+  "platforms": {
+    "debian": [
+
+    ],
+    "ubuntu": [
+
+    ]
+  },
+  "description": "Installs and configures nginx",
+  "version": "0.8.0",
+  "name": "nginx",
+  "providing": {
+    "nginx::memcache_proxy": [
+
+    ],
+    "nginx": [
+
+    ]
+  }
+}
