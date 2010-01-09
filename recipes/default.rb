@@ -1,5 +1,6 @@
 nginx_filename = ["nginx", node[:nginx][:version], node[:nginx][:architecture]].join("_")+".deb"
 
+package "libgd2-noxpm"
 package "libxslt1.1"
 package "libgeoip1"
 

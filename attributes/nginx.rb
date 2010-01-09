@@ -13,15 +13,14 @@ default.nginx[:gzip_proxied] = "any"
 default.nginx[:gzip_types] = [ "text/plain", "text/html", "text/css", "application/javascript", "application/x-javascript", "text/xml", "application/xml", "application/xml+rss", "text/javascript" ]
 
 default.nginx[:keepalive] = "on"
-default.nginx[:keepalive_timeout] = 3
+default.nginx[:keepalive_timeout] = 8
 
 default.nginx[:worker_processes] = 6
 default.nginx[:worker_connections] = 2048
 default.nginx[:server_names_hash_bucket_size] = 128
 
-default.nginx[:expires] = Mash.new
 default.nginx[:expires][:enabled] = true
-default.nginx[:expires][:regex] = '\.(ico|css|js|gif|jp?g|png)(\?[0-9]+)?'
+default.nginx[:expires][:regex] = '^/(javascripts|stylesheets|images|sprockets)[/\.]'
 default.nginx[:expires][:time] = "max"
 
 default.nginx[:extras] = ['headers']

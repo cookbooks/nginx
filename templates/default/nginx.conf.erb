@@ -21,6 +21,12 @@ http {
   tcp_nopush on;
   tcp_nodelay on;
 
+  ssl_session_cache    shared:SSL:10m;
+  ssl_session_timeout  8m;
+  ssl_protocols SSLv3 TLSv1;
+  ssl_ciphers ALL:!ADH:RC4+RSA:+HIGH:+MEDIUM:-LOW:-SSLv2:-EXP;
+  ssl_prefer_server_ciphers on;
+  
   <% if @node[:nginx][:keepalive] == "on" %>
   keepalive_timeout  <%= @node[:nginx][:keepalive_timeout] %>;
   <% end %>
