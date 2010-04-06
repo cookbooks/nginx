@@ -20,6 +20,7 @@ http {
   sendfile on;
   tcp_nopush on;
   tcp_nodelay on;
+  client_max_body_size 250m;
 
   ssl_session_cache    shared:SSL:10m;
   ssl_session_timeout  8m;
@@ -44,15 +45,6 @@ http {
                     '"$http_user_agent" "$http_x_forwarded_for"';
 
   server_names_hash_bucket_size <%= @node[:nginx][:server_names_hash_bucket_size] %>;
-
-  <% if @node[:hardware_lb_ip_addresses] %>
-  geo  $lb  {
-    default      0;
-    <% @node[:hardware_lb_ip_addresses].each do |ip| %>
-    <%= ip %>/32  1;
-    <% end %>
-  }
-  <% end %>
 
   include <%= @node[:nginx][:dir] %>/conf.d/*.conf;
   include <%= @node[:nginx][:dir] %>/sites-enabled/*;
