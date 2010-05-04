@@ -1,4 +1,4 @@
-default.nginx[:architecture] = kernel[:machine] == "x86_64" ? "amd64" : "i386"
+default.nginx[:architecture] = node[:kernel][:machine] == "x86_64" ? "amd64" : "i386"
 default.nginx[:dir]     = "/etc/nginx"
 default.nginx[:log_dir] = "/var/log/nginx"
 default.nginx[:user]    = "www-data"
