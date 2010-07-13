@@ -5,12 +5,8 @@ package "libgd2-noxpm"
 package "libxslt1.1"
 package "libgeoip1"
 
-remote_file "/tmp/#{nginx_filename}" do
-  source nginx_filename
-end
-
 dpkg_package "nginx" do
-  source "/tmp/#{nginx_filename}"
+  source "/home/system/pkg/debs/#{nginx_filename}"
 end
 
 service "nginx" do
@@ -31,6 +27,8 @@ end
     group "root"
   end
 end
+
+cookbook_file "#{node[:nginx][:dir]}/mime.types"
 
 template "nginx.conf" do
   path "#{node[:nginx][:dir]}/nginx.conf"
@@ -59,4 +57,8 @@ end
 
 service "nginx" do
   action [ :enable, :start ]
+end
+
+nginx_site "default" do
+  enable false
 end
